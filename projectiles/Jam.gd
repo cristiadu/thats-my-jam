@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,16 +8,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	const animation_length = 1500
-	var scale = (delta / animation_length) * 3
-	var animation_delta = (delta / animation_length) * (2 * PI)
+	var animation_length = 1500
+	var animation_delta = delta / animation_length
+	var new_scale = animation_delta * 3
 
-	scale = Vector2(scale, scale)
-	rotation = animation_delta
-	position.angle_to(self._calculate_position(animation_delta, animation_length))
+	scale = Vector2(scale.x + new_scale, scale.y + new_scale)
+	rotation = rotation + animation_delta * (2 * PI)
+	position = Vector2(position.x + (100 * delta), self._calculate_position(animation_delta, animation_length).y)
 
 
 func _calculate_position(animation_delta, animation_length):
-	var t = animation_delta % (2 * PI)
+	var t = fmod(animation_delta, (2 * PI))
 	var a = sin(t) * animation_length
-	return Vector2(0, cos(PI / 2) * a)
+	return Vector2(0, cos(PI / 2) * t)

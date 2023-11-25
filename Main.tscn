@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://fjg3tgoinpyx"]
+[gd_scene load_steps=11 format=3 uid="uid://fjg3tgoinpyx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
+[ext_resource type="PackedScene" uid="uid://bd8wyys3fgips" path="res://projectiles/Jam.tscn" id="4_6r1wd"]
 [ext_resource type="PackedScene" uid="uid://ckhjr1l32iqip" path="res://enemies/GrandmaEnemy.tscn" id="4_gyu1f"]
 [ext_resource type="Script" path="res://GameCamera.gd" id="4_xmmf8"]
-[ext_resource type="PackedScene" uid="uid://bd8wyys3fgips" path="res://projectiles/Jam.tscn" id="4_6r1wd"]
+[ext_resource type="Script" path="res://projectiles/Jam.gd" id="7_m5eiq"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rdoto"]
 a = Vector2(1024, 0)
@@ -53,3 +54,4 @@ position = Vector2(907, 576)
 
 [node name="Jam" parent="." instance=ExtResource("4_6r1wd")]
 position = Vector2(788, 695)
+script = ExtResource("7_m5eiq")
