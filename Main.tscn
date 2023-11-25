@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://fjg3tgoinpyx"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
+[ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2mapg"]
+b = Vector2(1024, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8xslp"]
+a = Vector2(0, 768)
+b = Vector2(1024, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5qyix"]
+b = Vector2(0, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hbngt"]
+a = Vector2(1024, 0)
+b = Vector2(1024, 768)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2owxl")
+
+[node name="Player" parent="." instance=ExtResource("2_2a2bb")]
+position = Vector2(280, 298)
+
+[node name="MapLimits" type="Node2D" parent="."]
+
+[node name="TopLimit" type="StaticBody2D" parent="MapLimits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/TopLimit"]
+shape = SubResource("SegmentShape2D_2mapg")
+
+[node name="BottomLimit" type="StaticBody2D" parent="MapLimits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/BottomLimit"]
+shape = SubResource("SegmentShape2D_8xslp")
+
+[node name="LeftLimit" type="StaticBody2D" parent="MapLimits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/LeftLimit"]
+shape = SubResource("SegmentShape2D_5qyix")
+
+[node name="RightLimit" type="StaticBody2D" parent="MapLimits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/RightLimit"]
+shape = SubResource("SegmentShape2D_hbngt")
