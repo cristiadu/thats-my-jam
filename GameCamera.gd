@@ -1,5 +1,5 @@
 extends Camera2D
-@export var scroll_speed = 100
+@export var scroll_speed = 80.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x = scroll_speed * delta
+	position.x += scroll_speed * delta
 	pass
