@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://fjg3tgoinpyx"]
+[gd_scene load_steps=6 format=3 uid="uid://fjg3tgoinpyx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2mapg"]
-b = Vector2(1024, 0)
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h5ddp"]
-distance = 1.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5qyix"]
 b = Vector2(0, 768)
@@ -23,16 +19,10 @@ position = Vector2(509, 385)
 
 [node name="MapLimits" type="Node2D" parent="."]
 
-[node name="TopLimit" type="StaticBody2D" parent="MapLimits"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/TopLimit"]
-shape = SubResource("SegmentShape2D_2mapg")
-
 [node name="BottomLimit" type="StaticBody2D" parent="MapLimits"]
 position = Vector2(1, 767)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/BottomLimit"]
-position = Vector2(-1, 1)
 shape = SubResource("WorldBoundaryShape2D_h5ddp")
 
 [node name="LeftLimit" type="StaticBody2D" parent="MapLimits"]

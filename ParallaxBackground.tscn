@@ -1,31 +1,40 @@
 [gd_scene load_steps=4 format=3 uid="uid://2jmq05mv5d27"]
 
-[ext_resource type="Texture2D" uid="uid://bu8su8op5qplo" path="res://assets/parallax-sky.png" id="1_1vabv"]
-[ext_resource type="Texture2D" uid="uid://climc6s6au76i" path="res://assets/parallax-clouds-and-buildings.png" id="2_e4vxr"]
+[ext_resource type="Texture2D" uid="uid://b4f6g0rmcvhec" path="res://assets/parallax-clouds-and-sky.png" id="1_32wbp"]
+[ext_resource type="Texture2D" uid="uid://cmeere5cumdyn" path="res://assets/parallax-buildings.png" id="2_daidq"]
 [ext_resource type="Texture2D" uid="uid://x3rj6cek8fxu" path="res://assets/parallax-crowd-and-floor.png" id="2_xb706"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
 [node name="Sky" type="ParallaxLayer" parent="."]
 texture_filter = 1
-motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1024, 768)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
-scale = Vector2(3.76471, 4.8)
-texture = ExtResource("1_1vabv")
+scale = Vector2(2, 1.5)
+texture = ExtResource("1_32wbp")
 centered = false
 
 [node name="CloudsAndBuldings" type="ParallaxLayer" parent="."]
 texture_filter = 1
-motion_mirroring = Vector2(1000, 0)
+motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CloudsAndBuldings"]
-position = Vector2(199, 0)
-scale = Vector2(3, 3.942)
-texture = ExtResource("2_e4vxr")
+position = Vector2(0, 255)
+texture = ExtResource("2_daidq")
+centered = false
+
+[node name="CloudsAndBuldings2" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_mirroring = Vector2(1024, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudsAndBuldings2"]
+position = Vector2(512, 255)
+texture = ExtResource("2_daidq")
 centered = false
 
 [node name="CrowdAndFloor" type="ParallaxLayer" parent="."]
+visible = false
 texture_filter = 1
 motion_mirroring = Vector2(1024, 0)
 
