@@ -1,5 +1,6 @@
-extends Node2D
-@export var scroll_speed = 100.0
+extends StaticBody2D
+class_name Enemy
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,6 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# If you change the position of the main scene, everything else (it's children) will keep being relative to it
-	position.x += scroll_speed * delta
 	pass

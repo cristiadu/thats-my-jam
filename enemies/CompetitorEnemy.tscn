@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://conp5pfxxlnsd"]
+
+[ext_resource type="Script" path="res://enemies/CompetitorEnemy.gd" id="1_ge8wb"]
+[ext_resource type="Texture2D" uid="uid://dfnfoa7xjxub1" path="res://assets/player.png" id="2_cod5g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhk1g"]
+radius = 29.0
+height = 122.0
+
+[node name="CompetitorEnemy" type="StaticBody2D"]
+script = ExtResource("1_ge8wb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0627451, 0, 0.188235, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_cod5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yhk1g")

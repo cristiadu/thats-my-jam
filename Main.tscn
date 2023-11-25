@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h5ddp"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rdoto"]
+a = Vector2(1024, 0)
+b = Vector2(0, 0)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5qyix"]
 b = Vector2(0, 768)
@@ -27,7 +29,7 @@ position = Vector2(500, 690)
 position = Vector2(1, 767)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/BottomLimit"]
-shape = SubResource("WorldBoundaryShape2D_h5ddp")
+shape = SubResource("SegmentShape2D_rdoto")
 
 [node name="LeftLimit" type="StaticBody2D" parent="MapLimits"]
 
