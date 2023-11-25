@@ -8,5 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# If you change the position of the scene, everything else (it's children) will keep being relative to it
 	position.x += scroll_speed * delta
 	pass

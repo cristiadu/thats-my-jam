@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://fjg3tgoinpyx"]
+[gd_scene load_steps=7 format=3 uid="uid://fjg3tgoinpyx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
-[ext_resource type="Script" path="res://GameCamera.gd" id="4_xmmf8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h5ddp"]
 
@@ -42,4 +41,3 @@ shape = SubResource("SegmentShape2D_mdmgj")
 
 [node name="GameCamera" type="Camera2D" parent="."]
 anchor_mode = 0
-script = ExtResource("4_xmmf8")
