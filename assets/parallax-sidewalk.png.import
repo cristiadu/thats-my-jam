@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x3rj6cek8fxu"
-path="res://.godot/imported/parallax-crowd-and-floor.png-2ebc05fdf1e5765436d1655d66926225.ctex"
+uid="uid://dj48kmmhsb62i"
+path="res://.godot/imported/parallax-sidewalk.png-2b3e9e49df78f1e5e6ac34d19dd17f5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/parallax-crowd-and-floor.png"
-dest_files=["res://.godot/imported/parallax-crowd-and-floor.png-2ebc05fdf1e5765436d1655d66926225.ctex"]
+source_file="res://assets/parallax-sidewalk.png"
+dest_files=["res://.godot/imported/parallax-sidewalk.png-2b3e9e49df78f1e5e6ac34d19dd17f5f.ctex"]
 
 [params]
 

@@ -1,13 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://fjg3tgoinpyx"]
+[gd_scene load_steps=8 format=3 uid="uid://fjg3tgoinpyx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
+[ext_resource type="Script" path="res://GameCamera.gd" id="4_xmmf8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h5ddp"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5qyix"]
 b = Vector2(0, 768)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mdmgj"]
+a = Vector2(1024, 0)
+b = Vector2(1024, 768)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2owxl")
@@ -15,7 +20,7 @@ script = ExtResource("1_2owxl")
 [node name="ParallaxBackground" parent="." instance=ExtResource("3_o70io")]
 
 [node name="Player" parent="." instance=ExtResource("2_2a2bb")]
-position = Vector2(509, 385)
+position = Vector2(500, 690)
 
 [node name="MapLimits" type="Node2D" parent="."]
 
@@ -29,3 +34,12 @@ shape = SubResource("WorldBoundaryShape2D_h5ddp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/LeftLimit"]
 shape = SubResource("SegmentShape2D_5qyix")
+
+[node name="RightLimit" type="StaticBody2D" parent="MapLimits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapLimits/RightLimit"]
+shape = SubResource("SegmentShape2D_mdmgj")
+
+[node name="GameCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("4_xmmf8")
