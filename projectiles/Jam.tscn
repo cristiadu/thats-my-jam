@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd8wyys3fgips"]
+
+[ext_resource type="Texture2D" uid="uid://cwv585hx7hxrd" path="res://assets/jar-of-jam.png" id="1_81let"]
+
+[node name="Jam" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_81let")
