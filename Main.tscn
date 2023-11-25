@@ -29,22 +29,22 @@ script = ExtResource("4_xmmf8")
 [node name="Player" parent="GameCamera" instance=ExtResource("2_2a2bb")]
 position = Vector2(500, 690)
 
-[node name="MapLimits" type="Node2D" parent="GameCamera"]
+[node name="ScreenLimits" type="Node2D" parent="GameCamera"]
 
-[node name="BottomLimit" type="StaticBody2D" parent="GameCamera/MapLimits"]
+[node name="BottomLimit" type="StaticBody2D" parent="GameCamera/ScreenLimits"]
 position = Vector2(1, 767)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/MapLimits/BottomLimit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/ScreenLimits/BottomLimit"]
 shape = SubResource("SegmentShape2D_rdoto")
 
-[node name="LeftLimit" type="StaticBody2D" parent="GameCamera/MapLimits"]
+[node name="LeftLimit" type="StaticBody2D" parent="GameCamera/ScreenLimits"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/MapLimits/LeftLimit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/ScreenLimits/LeftLimit"]
 shape = SubResource("SegmentShape2D_5qyix")
 
-[node name="RightLimit" type="StaticBody2D" parent="GameCamera/MapLimits"]
+[node name="RightLimit" type="StaticBody2D" parent="GameCamera/ScreenLimits"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/MapLimits/RightLimit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/ScreenLimits/RightLimit"]
 shape = SubResource("SegmentShape2D_mdmgj")
 
 [node name="GrandmaEnemy" parent="." instance=ExtResource("4_gyu1f")]
