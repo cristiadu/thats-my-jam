@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var animation_length = 1500
 	var animation_delta = delta / animation_length
 	var new_scale = animation_delta * 3

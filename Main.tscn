@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bd8wyys3fgips" path="res://projectiles/Jam.tscn" id="4_6r1wd"]
 [ext_resource type="PackedScene" uid="uid://ckhjr1l32iqip" path="res://enemies/GrandmaEnemy.tscn" id="4_gyu1f"]
 [ext_resource type="Script" path="res://GameCamera.gd" id="4_xmmf8"]
-[ext_resource type="Script" path="res://projectiles/Jam.gd" id="7_m5eiq"]
+[ext_resource type="Script" path="res://EnemySpawner.gd" id="6_hkutu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rdoto"]
 a = Vector2(1024, 0)
@@ -49,9 +49,15 @@ shape = SubResource("SegmentShape2D_5qyix")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/ScreenLimits/RightLimit"]
 shape = SubResource("SegmentShape2D_mdmgj")
 
+[node name="EnemySpawner" type="Node2D" parent="GameCamera"]
+position = Vector2(1540, 545)
+script = ExtResource("6_hkutu")
+
+[node name="SpawnTimer" type="Timer" parent="GameCamera/EnemySpawner"]
+one_shot = true
+
 [node name="GrandmaEnemy" parent="." instance=ExtResource("4_gyu1f")]
 position = Vector2(907, 576)
 
 [node name="Jam" parent="." instance=ExtResource("4_6r1wd")]
 position = Vector2(788, 695)
-script = ExtResource("7_m5eiq")
