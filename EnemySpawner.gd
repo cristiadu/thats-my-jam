@@ -35,4 +35,6 @@ func on_SpawnTimer_timeout():
 	
 	# Restart the timer
 	next_spawn_time -= time_decrease
+	if next_spawn_time < MIN_SPAWN_TIME:
+		next_spawn_time = MIN_SPAWN_TIME
 	$SpawnTimer.start(next_spawn_time)
