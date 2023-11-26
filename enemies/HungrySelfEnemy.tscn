@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c12pw5ywqmihj"]
 
 [ext_resource type="Script" path="res://enemies/HungrySelfEnemy.gd" id="1_2lwi6"]
-[ext_resource type="Texture2D" uid="uid://dfnfoa7xjxub1" path="res://assets/player.png" id="2_oarsj"]
+[ext_resource type="Texture2D" uid="uid://nd6h7ffqh8f4" path="res://assets/enemy-self.png" id="2_gwei7"]
 
 [node name="HungrySelfEnemy" type="Node2D"]
 script = ExtResource("1_2lwi6")
 enemy_y_position = 650
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 1, 1)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_oarsj")
+position = Vector2(25, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gwei7")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt5ysmm87qwe"]
+
+[ext_resource type="Script" path="res://enemies/CatEnemy.gd" id="1_wgc6f"]
+[ext_resource type="Texture2D" uid="uid://bs1xsiaukbi4w" path="res://assets/enemy-cat.png" id="2_bc1mx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4tpn0"]
+radius = 13.0
+height = 70.0
+
+[node name="CatEnemy" type="StaticBody2D"]
+script = ExtResource("1_wgc6f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(35, -38)
+texture = ExtResource("2_bc1mx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4tpn0")

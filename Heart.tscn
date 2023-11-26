@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://j08r0flglcuc"]
+
+[ext_resource type="Texture2D" uid="uid://cyfu7th0j7mrd" path="res://assets/empty-heart.png" id="1_dwqom"]
+[ext_resource type="Texture2D" uid="uid://cjh3kshlf4ooh" path="res://assets/full-heart.png" id="2_sx3cd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y20ts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dwqom")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sx3cd")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[node name="Heart" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_y20ts")
+animation = &"full"

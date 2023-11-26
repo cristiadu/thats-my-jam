@@ -13,10 +13,14 @@ var preloadedEnemies := [
 	preload("res://enemies/HungrySelfEnemy.tscn")
 ]
 
+var preloadedBlockage := [
+	preload("res://enemies/CatEnemy.tscn")
+]
+
 func _ready():
 	var err = $SpawnTimer.timeout.connect(on_SpawnTimer_timeout)
 	if err:
-		print("Error when linking HUD delete behavior")
+		print("Error when linking behavior")
 	
 	randomize() 
 	camera_width = get_viewport_rect().end.x
@@ -24,14 +28,19 @@ func _ready():
 	
 	
 func on_SpawnTimer_timeout():
-	# Spawn an enemy
-	var enemyPreload = preloadedEnemies[randi() % preloadedEnemies.size()]
-	var enemy: Enemy = enemyPreload.instantiate()
-
+	var enemy
 	var cameraRect : Vector2 = get_parent().get_target_position()
-	var xPos: int = randi_range(cameraRect.x, cameraRect.x + camera_width)
-	print(enemy.enemy_y_position)
-	enemy.position = Vector2(xPos, enemy.enemy_y_position)
+	var xPos: int = randi_range(cameraRect.x  + camera_width/4, cameraRect.x + camera_width)
+	if randf() < 0.3:
+		var blockPreload = preloadedBlockage[randi() % preloadedBlockage.size()]
+		enemy = blockPreload.instantiate()
+		enemy.position = Vector2(xPos, 700)
+	else:
+		# Spawn an enemy
+		var enemyPreload = preloadedEnemies[randi() % preloadedEnemies.size()]
+		enemy = enemyPreload.instantiate()
+		enemy.position = Vector2(xPos, enemy.enemy_y_position)
+		
 	get_parent().add_sibling(enemy)
 	
 	# Restart the timer
