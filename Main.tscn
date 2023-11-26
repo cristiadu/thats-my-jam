@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://fjg3tgoinpyx"]
+[gd_scene load_steps=10 format=3 uid="uid://fjg3tgoinpyx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
 [ext_resource type="PackedScene" uid="uid://bd8wyys3fgips" path="res://projectiles/Jam.tscn" id="4_6r1wd"]
-[ext_resource type="PackedScene" uid="uid://ckhjr1l32iqip" path="res://enemies/GrandmaEnemy.tscn" id="4_gyu1f"]
 [ext_resource type="Script" path="res://GameCamera.gd" id="4_xmmf8"]
 [ext_resource type="Script" path="res://EnemySpawner.gd" id="6_hkutu"]
 
@@ -29,12 +28,12 @@ anchor_mode = 0
 script = ExtResource("4_xmmf8")
 
 [node name="Player" parent="GameCamera" instance=ExtResource("2_2a2bb")]
-position = Vector2(500, 690)
+position = Vector2(493, 654)
 
 [node name="ScreenLimits" type="Node2D" parent="GameCamera"]
 
 [node name="BottomLimit" type="StaticBody2D" parent="GameCamera/ScreenLimits"]
-position = Vector2(1, 767)
+position = Vector2(1, 740)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameCamera/ScreenLimits/BottomLimit"]
 shape = SubResource("SegmentShape2D_rdoto")
@@ -55,9 +54,6 @@ script = ExtResource("6_hkutu")
 
 [node name="SpawnTimer" type="Timer" parent="GameCamera/EnemySpawner"]
 one_shot = true
-
-[node name="GrandmaEnemy" parent="." instance=ExtResource("4_gyu1f")]
-position = Vector2(907, 576)
 
 [node name="Jam" parent="." instance=ExtResource("4_6r1wd")]
 position = Vector2(788, 695)

@@ -30,7 +30,8 @@ func on_SpawnTimer_timeout():
 
 	var cameraRect : Vector2 = get_parent().get_target_position()
 	var xPos: int = randi_range(cameraRect.x, cameraRect.x + camera_width)
-	enemy.position = Vector2(xPos, position.y)
+	print(enemy.enemy_y_position)
+	enemy.position = Vector2(xPos, enemy.enemy_y_position)
 	get_parent().add_sibling(enemy)
 	
 	# Restart the timer

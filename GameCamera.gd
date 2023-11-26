@@ -1,5 +1,5 @@
 extends Camera2D
-@export var scroll_speed = 100.0
+@export var scroll_speed = 50.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

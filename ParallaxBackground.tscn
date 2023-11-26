@@ -42,7 +42,7 @@ centered = false
 [node name="CrowdAndSidewalk" type="ParallaxLayer" parent="."]
 texture_filter = 1
 position = Vector2(0, 103)
-motion_scale = Vector2(3, 3)
+motion_scale = Vector2(4, 4)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CrowdAndSidewalk"]
@@ -52,7 +52,7 @@ centered = false
 [node name="Sidewalk" type="ParallaxLayer" parent="."]
 texture_filter = 1
 position = Vector2(512, 103)
-motion_scale = Vector2(3, 3)
+motion_scale = Vector2(4, 4)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sidewalk"]
@@ -62,7 +62,7 @@ centered = false
 [node name="StreetWithHole" type="ParallaxLayer" parent="."]
 texture_filter = 1
 position = Vector2(512, 272)
-motion_scale = Vector2(3, 3)
+motion_scale = Vector2(4, 4)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="StreetWithHole"]
@@ -74,7 +74,7 @@ centered = false
 [node name="StreetWithHole2" type="ParallaxLayer" parent="."]
 texture_filter = 1
 position = Vector2(0, 272)
-motion_scale = Vector2(3, 3)
+motion_scale = Vector2(4, 4)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="StreetWithHole2"]
