@@ -2,6 +2,11 @@ extends StaticBody2D
 
 @export var collision_damage = 1
 
+signal hit_player
+
+func _ready():
+	add_to_group("blockage")
+
 func _process(delta):
 	var cameraRect : Vector2 = get_parent().get_node("GameCamera").get_target_position()
 	# Delete Enemy from memory when the GameCamera passes it.
@@ -11,3 +16,7 @@ func _process(delta):
 
 func get_enemy_type():
 	return "CatEnemy"
+
+func on_hit():
+	hit_player.emit(collision_damage)
+	queue_free()

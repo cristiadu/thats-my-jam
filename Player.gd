@@ -8,6 +8,14 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	move_player(delta)
+	move_and_slide()
+	var collision = get_last_slide_collision()
+	if collision != null:
+		on_player_collision(collision)
+	
+
+func move_player(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -23,6 +31,9 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-
+		
+func on_player_collision(collision: KinematicCollision2D):
+	var body = collision.get_collider()
+	if body.is_in_group("blockage") or body.is_in_group("projectile"):
+		body.on_hit()
+	
