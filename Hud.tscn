@@ -7,15 +7,15 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_08gvb")
 
-[node name="Livves" type="Node2D" parent="."]
+[node name="Lives" type="Node2D" parent="."]
 
-[node name="Heart1" parent="Livves" instance=ExtResource("2_10iou")]
+[node name="Heart1" parent="Lives" instance=ExtResource("2_10iou")]
 position = Vector2(96, 15)
 
-[node name="Heart2" parent="Livves" instance=ExtResource("2_10iou")]
+[node name="Heart2" parent="Lives" instance=ExtResource("2_10iou")]
 position = Vector2(56, 15)
 
-[node name="Heart3" parent="Livves" instance=ExtResource("2_10iou")]
+[node name="Heart3" parent="Lives" instance=ExtResource("2_10iou")]
 position = Vector2(16, 15)
 
 [node name="InfoMessage" type="Label" parent="."]

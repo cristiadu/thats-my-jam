@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = -600.0
 
+signal lost_life
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -36,4 +38,5 @@ func on_player_collision(collision: KinematicCollision2D):
 	var body = collision.get_collider()
 	if body.is_in_group("blockage") or body.is_in_group("projectile"):
 		body.on_hit()
+		lost_life.emit(body.get_damage())
 	

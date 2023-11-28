@@ -2,8 +2,6 @@ extends StaticBody2D
 
 @export var collision_damage = 1
 
-signal hit_player
-
 func _ready():
 	add_to_group("blockage")
 
@@ -16,7 +14,9 @@ func _process(delta):
 
 func get_enemy_type():
 	return "CatEnemy"
+	
+func get_damage():
+	return collision_damage
 
 func on_hit():
-	hit_player.emit(collision_damage)
 	queue_free()
