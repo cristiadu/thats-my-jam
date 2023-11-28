@@ -5,9 +5,11 @@
 
 [node name="HungrySelfEnemy" type="Node2D"]
 script = ExtResource("1_2lwi6")
-enemy_y_position = 650
+projectile_interval = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(25, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gwei7")
+
+[node name="ProjectileTimer" type="Timer" parent="."]

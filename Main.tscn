@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://fjg3tgoinpyx"]
+[gd_scene load_steps=10 format=3 uid="uid://fjg3tgoinpyx"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_2owxl"]
 [ext_resource type="PackedScene" uid="uid://b8627igcohhoi" path="res://Player.tscn" id="2_2a2bb"]
 [ext_resource type="PackedScene" uid="uid://2jmq05mv5d27" path="res://ParallaxBackground.tscn" id="3_o70io"]
-[ext_resource type="PackedScene" uid="uid://bd8wyys3fgips" path="res://projectiles/Jam.tscn" id="4_6r1wd"]
 [ext_resource type="Script" path="res://GameCamera.gd" id="4_xmmf8"]
 [ext_resource type="Script" path="res://EnemySpawner.gd" id="6_hkutu"]
 [ext_resource type="PackedScene" uid="uid://udkto3l3fq8o" path="res://Hud.tscn" id="7_5xy30"]
@@ -55,8 +54,5 @@ script = ExtResource("6_hkutu")
 
 [node name="SpawnTimer" type="Timer" parent="GameCamera/EnemySpawner"]
 one_shot = true
-
-[node name="Jam" parent="." instance=ExtResource("4_6r1wd")]
-position = Vector2(788, 695)
 
 [node name="HUD" parent="." instance=ExtResource("7_5xy30")]

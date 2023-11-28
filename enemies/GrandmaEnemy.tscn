@@ -1,12 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckhjr1l32iqip"]
 
 [ext_resource type="Script" path="res://enemies/GrandmaEnemy.gd" id="1_o405t"]
-[ext_resource type="Texture2D" uid="uid://dfnfoa7xjxub1" path="res://assets/player.png" id="2_aed1u"]
+[ext_resource type="Texture2D" uid="uid://bpaewi1q3o5ma" path="res://assets/enemy-grandma.png" id="2_c0f28"]
 
 [node name="GrandmaEnemy" type="Node2D"]
 script = ExtResource("1_o405t")
+enemy_y_position = 500
+projectile_interval = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.152941, 0, 1, 1)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_aed1u")
+position = Vector2(27, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_c0f28")
+
+[node name="ProjectileTimer" type="Timer" parent="."]
